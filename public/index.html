@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Filler Arcade Game</title>
+		<link rel="stylesheet" href="/public/styles.css" />
+        <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico' />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script defer src="/public/script.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="content" class="content-container">
+            <div class="msg-wrapper">
+                <div class="msg-box" id="msg-box"></div>
+                <button id="play-again" class="play-again">
+                    Play again?
+                </button>
+            </div>
+            <div id="scores" class="scores">
+                <div class="your-score">
+                    <p>You</p>
+                    <div class="score-wrapper">
+                        <p id="your-score" class="score-text">1</p>
+                    </div>
+                </div>
+                <div class="their-score">
+                    <p>Opponent</p>
+                    <div class="score-wrapper">
+                        <p id="their-score" class="score-text">1</p>
+                    </div>
+                </div>
+            </div>
+            <div id="game-board" class="game-board">
+                <div id="onboarding" class="onboarding">
+                    <p class="onboarding-text">Start here</p>
+                    <img src="/public/icons/arrow.svg" class="onboarding-arrow" alt="Arrow">
+                </div>
+            </div>
+            <div id="color-options" class="color-options">
+                <button class="color-option disabled red" data-color="red"></button>
+                <button class="color-option disabled green" data-color="green"></button>
+                <button class="color-option disabled yellow" data-color="yellow"></button>
+                <button class="color-option disabled blue" data-color="blue"></button>
+                <button class="color-option disabled purple" data-color="purple"></button>
+                <button class="color-option disabled black" data-color="black"></button>
+            </div>
+        </div>
+
+        <button id="modal-trigger" class="modal-trigger">?</button>
+
+        <div id="modal" class="modal-overlay">
+            <div id="modal-content" class="modal">
+                <p class="modal-header">How to play:</p>
+                <button class="close-button" id="close">
+                    <img src="/public/icons/close.svg" alt="Close" class="close-icon">
+                </button>
+                <ol class="modal-rules">
+                    <li class="modal-rule">Each player is assigned a corner tile at the start of the game (bottom left)</li>
+                    <li class="modal-rule">Players take turns filling their tiles with one of 6 colors in an attempt to capture adjacent
+                        tiles of the same color</li>
+                    <li class="modal-rule">You cannot change the color of your tiles into the color of your opponent's tiles</li>
+                    <li class="modal-rule">The game ends when there are no more tiles to occupy</li>
+                    <li class="modal-rule">The player with the most tiles wins</li>
+                </ol>
+            </div>
+        </div>
+	</body>
+</html>

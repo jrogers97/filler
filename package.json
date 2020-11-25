@@ -1,0 +1,25 @@
+{
+  "name": "filler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "8.11.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "startDev": "nodemon",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
