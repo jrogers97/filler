@@ -338,19 +338,19 @@
 
 @media(max-width: 460px) {
     .onboarding {
-        font-size: 13px;
-        left: -70px;
+        font-size: 13px !important;
+        left: -70px !important;
     }
 
     .onboarding-text {
-        transform: rotate(-27deg);
+        transform: rotate(-27deg) !important;
     }
 }
 
 @media(max-width: 382px) {
     .onboarding {
-        font-size: 11px;
-        left: -56px;
-        bottom: 10px;
+        font-size: 11px !important;
+        left: -56px !important;
+        bottom: 10px !important;
     }
 }
