@@ -110,7 +110,9 @@ $(document).ready(function () {
         // rotate non-host's board 180deg so user always starts from the bottom left
         boardEl.removeClass("rotated").toggleClass("rotated", !isYourTurn);
         // show tip to indicate where to start
-        onboarding.addClass("visible");
+        if (!seenOnboarding) {
+            onboarding.addClass("visible");
+        }
 
         toggleColorButtonsDisabled([yourColor, theirColor], !isYourTurn);
 	}
