@@ -92,11 +92,14 @@
 .onboarding {
     display: none;
     position: absolute;
-    bottom: 14px;
-    left: -80px;
-    font-size: 14px;
+    /* bottom: 14px; */
+    /* left: -80px; */
+    /* font-size: 14px; */
     flex-direction: column;
     align-items: center;
+    font-size: 11px;
+    left: -56px;
+    bottom: 10px;
 }
 
 .onboarding.visible {
@@ -105,6 +108,7 @@
 
 .onboarding-text {
     margin-bottom: 8px;
+    transform: rotate(-27deg);
 }
 
 .onboarding-arrow {
@@ -118,15 +122,15 @@
     bottom: inherit;
     left: inherit;
     top: 14px;
-    right: -80px;
+    right: -56px;
 }
 
 .game-board {
     position: relative;
 	display: flex;
 	flex-wrap: wrap;
-	max-width: 360px;
-	min-height: 315px;
+    max-width: 240px;
+    min-height: 210px;
 	border-radius: 8px;
 	box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 8px;
 }
@@ -138,8 +142,8 @@
 }
 
 .cell {
-	height: 45px;
-	width: 45px;
+    height: 30px;
+    width: 30px;
 }
 
 .cell:nth-child(2) {
@@ -192,7 +196,7 @@
 }
 
 .color-option.disabled {
-	transform: scale(0.5);
+	transform: scale(0.5) !important;
 	pointer-events: none;
 }
 
@@ -312,8 +316,8 @@
     }
 }
 
-@media(max-width: 600px) {
-    .game-board {
+@media(min-width: 430px) {
+   .game-board {
         max-width: 288px;
 	    min-height: 252px;
     }
@@ -321,36 +325,43 @@
     .cell {
         height: 36px;
         width: 36px;
-    }
+    } 
 }
 
-@media(max-width: 430px) {
+@media(min-width: 600px) {
     .game-board {
-        max-width: 240px;
-        min-height: 210px;
+        max-width: 360px;
+    	min-height: 315px;
     }
-
+    
     .cell {
-        height: 30px;
-        width: 30px;
+        height: 45px;
+        width: 45px;
     }
 }
 
-@media(max-width: 460px) {
+@media(min-width: 382px) {
     .onboarding {
-        font-size: 13px !important;
-        left: -70px !important;
+        font-size: 13px;
+        left: -70px;
+    }
+
+    .game-board.rotated .onboarding {
+        right: -70px;
+    }
+}
+
+@media(min-width: 460px) {
+    .onboarding {
+        font-size: 14px;
+        left: -80px;
+    }
+
+    .game-board.rotated .onboarding {
+        right: -80px;
     }
 
     .onboarding-text {
-        transform: rotate(-27deg) !important;
-    }
-}
-
-@media(max-width: 382px) {
-    .onboarding {
-        font-size: 11px !important;
-        left: -56px !important;
-        bottom: 10px !important;
+        transform: none;
     }
 }
